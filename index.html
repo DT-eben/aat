@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATT Hotel — Boutique Luxury, Accra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --forest:#1B3A2E;--forest-d:#102218;--forest-l:#2D5440;
+  --gold:#C9A227;--gold-l:#E0BE4E;--gold-dim:rgba(201,162,39,0.1);
+  --cream:#FBF7EE;--cream2:#F3ECDA;
+  --ink:#16201B;--text:#2C342E;--text2:#6B756C;--text3:#A0A89E;
+  --border:rgba(22,32,27,0.09);--border-g:rgba(201,162,39,0.32);
+  --font:'Manrope',sans-serif;--serif:'Cormorant Garamond',serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text);font-family:var(--font);font-size:15px;line-height:1.65;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:84px;background:rgba(251,247,238,0.97);backdrop-filter:blur(18px);border-bottom:0.5px solid var(--border);transition:height 0.3s}
+.logo{display:flex;align-items:center;gap:13px;cursor:pointer}
+.logo-mark{width:42px;height:42px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:17px;font-weight:600;color:var(--gold);position:relative}
+.logo-mark::before,.logo-mark::after{content:'';position:absolute;width:5px;height:5px;border:1px solid var(--gold)}
+.logo-mark::before{top:-4px;left:-4px;border-right:none;border-bottom:none}
+.logo-mark::after{bottom:-4px;right:-4px;border-left:none;border-top:none}
+.logo-text{display:flex;flex-direction:column;line-height:1.1}
+.logo-name{font-family:var(--serif);font-size:21px;font-weight:600;letter-spacing:0.04em;color:var(--forest)}
+.logo-sub{font-size:8px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-top:1px}
+.nav-links{display:flex;align-items:center;gap:34px;list-style:none}
+.nav-links a{color:var(--text2);font-size:11.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.2s;cursor:pointer;position:relative}
+.nav-links a:hover,.nav-links a.on{color:var(--forest)}
+.nav-links a.on::after{content:'';position:absolute;bottom:-22px;left:0;right:0;height:2px;background:var(--gold)}
+.nav-cta{background:var(--forest);border:1px solid var(--forest);color:var(--cream);padding:12px 26px;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;font-family:var(--font)}
+.nav-cta:hover{background:var(--gold);border-color:var(--gold);color:var(--forest-d)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:1.5px;background:var(--forest)}
+.page{display:none;min-height:100vh;padding-top:84px}
+.page.on{display:block}
+
+/* HERO */
+.hero{position:relative;height:calc(100vh - 84px);min-height:620px;overflow:hidden}
+.hero-slides{position:absolute;inset:0}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease;background-size:cover;background-position:center}
+.hero-slide.on{opacity:1}
+.hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(16,34,24,0.55) 0%,rgba(16,34,24,0.25) 40%,rgba(16,34,24,0.75) 100%)}
+.hero-inner{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px}
+.hero-eyebrow{display:flex;align-items:center;gap:14px;font-size:11px;font-weight:600;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold-l);margin-bottom:28px}
+.hero-eyebrow .ln{width:32px;height:1px;background:var(--gold-l)}
+h1.hero-h1{font-family:var(--serif);font-size:clamp(48px,7vw,98px);font-weight:600;line-height:1;color:#fff;margin-bottom:22px;letter-spacing:0.01em}
+h1.hero-h1 em{font-style:italic;color:var(--gold-l);font-weight:500}
+.hero-sub{font-size:16px;color:rgba(255,255,255,0.86);max-width:480px;margin-bottom:44px;font-weight:300;letter-spacing:0.02em}
+
+/* BOOKING BAR */
+.booking-bar{position:relative;z-index:3;background:rgba(251,247,238,0.97);backdrop-filter:blur(12px);border:1px solid var(--border-g);display:flex;align-items:stretch;max-width:980px;width:100%;box-shadow:0 20px 50px rgba(16,34,24,0.25)}
+.bb-field{flex:1;padding:18px 24px;border-right:0.5px solid var(--border);text-align:left;cursor:pointer;transition:background 0.2s}
+.bb-field:last-child{border-right:none;flex:0 0 auto;display:flex;align-items:center}
+.bb-field:hover{background:var(--gold-dim)}
+.bb-label{font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--text3);margin-bottom:6px;display:block}
+.bb-field select,.bb-field input{border:none;background:transparent;font-family:var(--font);font-size:14px;font-weight:600;color:var(--forest);outline:none;width:100%;cursor:pointer;-webkit-appearance:none}
+.bb-cta{background:var(--gold);color:var(--forest-d);border:none;padding:0 38px;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;font-family:var(--font)}
+.bb-cta:hover{background:var(--gold-l)}
+.hero-dots{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;display:flex;gap:9px}
+.hdot{width:24px;height:3px;background:rgba(255,255,255,0.35);cursor:pointer;border:none;transition:background 0.3s}
+.hdot.on{background:var(--gold-l)}
+
+/* SECTION SHELLS */
+.sec{padding:110px 56px}
+.sec.tight{padding:90px 56px}
+.sec-ey{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.sec-ey .ln{width:26px;height:1px;background:var(--gold)}
+h2.sec-h{font-family:var(--serif);font-size:clamp(32px,4vw,54px);font-weight:600;line-height:1.08;color:var(--forest)}
+h2.sec-h em{font-style:italic;color:var(--gold)}
+.sec-sub{font-size:15px;color:var(--text2);max-width:560px;line-height:1.8;margin-top:18px}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+
+/* WELCOME / INTRO */
+.intro-g{display:grid;grid-template-columns:0.9fr 1.1fr;gap:90px;align-items:center}
+.intro-img{position:relative;aspect-ratio:3/4}
+.intro-img img{width:100%;height:100%;object-fit:cover;display:block}
+.intro-img-accent{position:absolute;top:-18px;left:-18px;right:18px;bottom:18px;border:1px solid var(--gold);z-index:-1}
+.intro-text p{color:var(--text2);line-height:1.9;margin-bottom:18px;font-size:15.5px}
+.intro-stats{display:flex;gap:0;margin-top:36px;border-top:1px solid var(--border);padding-top:28px}
+.istat{flex:1;border-right:1px solid var(--border)}
+.istat:last-child{border-right:none}
+.istat-n{font-family:var(--serif);font-size:34px;color:var(--gold);font-weight:600;display:block}
+.istat-l{font-size:10px;color:var(--text3);letter-spacing:0.15em;text-transform:uppercase;margin-top:4px}
+
+/* ROOMS TEASER (home) */
+.rooms-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:56px}
+.rstrip-item{position:relative;aspect-ratio:4/5;overflow:hidden;cursor:pointer;background:var(--cream2)}
+.rstrip-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;display:block}
+.rstrip-item:hover img{transform:scale(1.06)}
+.rstrip-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(16,34,24,0.85) 0%,rgba(16,34,24,0.05) 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:28px}
+.rstrip-tag{font-size:10px;color:var(--gold-l);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:6px}
+.rstrip-name{font-family:var(--serif);font-size:25px;color:#fff;font-weight:600;margin-bottom:8px}
+.rstrip-price{font-size:13px;color:rgba(255,255,255,0.85)}
+
+/* AMENITIES */
+.amen-bg{background:var(--forest);color:var(--cream)}
+.amen-bg .sec-ey{color:var(--gold-l)}
+.amen-bg h2.sec-h{color:#fff}
+.amen-bg .sec-sub{color:rgba(255,255,255,0.65)}
+.amen-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.12);margin-top:56px}
+.amen-i{background:var(--forest);padding:40px 28px;transition:background 0.25s}
+.amen-i:hover{background:var(--forest-l)}
+.amen-icon{width:46px;height:46px;border:1px solid var(--gold-l);display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.amen-icon svg{width:22px;height:22px;stroke:var(--gold-l);fill:none;stroke-width:1.3}
+.amen-t{font-family:var(--serif);font-size:19px;font-weight:600;margin-bottom:10px;color:#fff}
+.amen-d{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.7}
+
+/* DINING TEASER */
+.dine-g{display:grid;grid-template-columns:1.1fr 0.9fr;gap:90px;align-items:center}
+.dine-img{position:relative;aspect-ratio:5/4.2}
+.dine-img img{width:100%;height:100%;object-fit:cover;display:block}
+.dine-badge{position:absolute;bottom:-26px;right:-26px;background:var(--gold);color:var(--forest-d);width:120px;height:120px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 12px 30px rgba(201,162,39,0.4)}
+.dine-badge .n{font-family:var(--serif);font-size:13px;font-weight:600;line-height:1.2}
+.dine-list{margin-top:28px}
+.dine-item{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--border)}
+.dine-item:first-child{border-top:1px solid var(--border)}
+.di-name{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--forest)}
+.di-desc{font-size:12.5px;color:var(--text3);margin-top:3px}
+.di-hours{font-size:12px;color:var(--gold);font-weight:600;white-space:nowrap;padding-left:20px}
+
+/* TESTIMONIALS */
+.testi-wrap{background:var(--cream2)}
+.testi-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:52px}
+.testi{background:var(--cream2);padding:36px 32px}
+.testi-stars{color:var(--gold);font-size:13px;margin-bottom:16px;letter-spacing:2px}
+.testi p{font-size:14.5px;color:var(--text2);line-height:1.85;margin-bottom:20px;font-style:italic;font-family:var(--serif)}
+.testi-name{font-size:13px;font-weight:700;color:var(--forest)}
+.testi-loc{font-size:11px;color:var(--text3)}
+
+/* CTA BAND */
+.cta-band{position:relative;padding:100px 56px;text-align:center;overflow:hidden}
+.cta-band-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1800&q=80') center/cover;z-index:0}
+.cta-band-shade{position:absolute;inset:0;background:rgba(16,34,24,0.78);z-index:1}
+.cta-band-c{position:relative;z-index:2;max-width:600px;margin:0 auto}
+.cta-band h2{font-family:var(--serif);font-size:clamp(30px,3.6vw,48px);color:#fff;font-weight:600;margin-bottom:18px}
+.cta-band p{color:rgba(255,255,255,0.78);font-size:15px;margin-bottom:36px;line-height:1.8}
+
+/* BUTTONS (shared) */
+.btn-g{background:var(--gold);color:var(--forest-d);padding:15px 36px;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;border:none;cursor:pointer;transition:background 0.2s;font-family:var(--font);display:inline-block}
+.btn-g:hover{background:var(--gold-l)}
+.btn-o{background:transparent;color:var(--forest);border:1px solid var(--forest);padding:15px 36px;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;font-family:var(--font);display:inline-block}
+.btn-o:hover{background:var(--forest);color:var(--cream)}
+.btn-o-light{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.4);padding:15px 36px;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;font-family:var(--font);display:inline-block}
+.btn-o-light:hover{border-color:var(--gold-l);color:var(--gold-l)}
+.btn-full{width:100%;text-align:center}
+
+/* FOOTER */
+footer{background:var(--forest-d);color:rgba(255,255,255,0.7);padding:64px 56px 40px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:50px}
+.f-brand p{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.8;margin-top:16px;max-width:230px}
+.f-brand .logo-name{color:#fff}
+.f-social{display:flex;gap:10px;margin-top:22px}
+.f-social a{width:34px;height:34px;border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;transition:all 0.2s;cursor:pointer}
+.f-social a:hover{border-color:var(--gold);color:var(--gold)}
+.fc h4{font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:18px}
+.fc a{display:block;font-size:13.5px;color:rgba(255,255,255,0.65);text-decoration:none;margin-bottom:11px;transition:color 0.2s;cursor:pointer}
+.fc a:hover{color:var(--gold-l)}
+.f-bot{padding:22px 56px;border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between;background:var(--forest-d)}
+.f-bot p{font-size:11.5px;color:rgba(255,255,255,0.35)}
+
+.fu{opacity:0;transform:translateY(22px);transition:opacity 0.7s ease,transform 0.7s ease}
+.fu.vis{opacity:1;transform:translateY(0)}
+
+/* ═══ ROOMS PAGE ═══ */
+.pg-hd{position:relative;height:46vh;min-height:340px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+.pg-hd-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.pg-hd-shade{position:absolute;inset:0;background:rgba(16,34,24,0.62)}
+.pg-hd-c{position:relative;z-index:1;color:#fff}
+.pg-hd-c .sec-ey{color:var(--gold-l);justify-content:center}
+.pg-hd-c h1{font-family:var(--serif);font-size:clamp(38px,5vw,64px);font-weight:600}
+.pg-hd-c p{color:rgba(255,255,255,0.82);margin-top:14px;font-size:14.5px;max-width:480px;margin-left:auto;margin-right:auto}
+
+.room-filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:44px 56px 0}
+.fb{background:transparent;border:1px solid var(--border);color:var(--text2);padding:9px 20px;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;font-family:var(--font)}
+.fb:hover,.fb.on{border-color:var(--gold);color:var(--forest);background:var(--gold-dim)}
+
+.rooms-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:36px;padding:48px 56px 100px}
+.room-card{background:#fff;border:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;cursor:pointer;transition:box-shadow 0.3s,transform 0.3s}
+.room-card:hover{box-shadow:0 24px 50px rgba(16,34,24,0.12);transform:translateY(-3px)}
+.room-card:hover .room-img img{transform:scale(1.05)}
+.room-img{position:relative;overflow:hidden;aspect-ratio:1/1}
+.room-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;display:block}
+.room-badge{position:absolute;top:14px;left:14px;background:var(--gold);color:var(--forest-d);font-size:9px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;padding:5px 11px}
+.room-body{padding:28px 26px;display:flex;flex-direction:column}
+.room-tag{font-size:10px;color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;font-weight:700;margin-bottom:6px}
+.room-name{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--forest);margin-bottom:10px}
+.room-desc{font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:18px;flex:1}
+.room-feats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.room-feat{font-size:10.5px;color:var(--text2);background:var(--cream2);padding:4px 10px;border:0.5px solid var(--border)}
+.room-foot{display:flex;align-items:flex-end;justify-content:space-between;padding-top:16px;border-top:1px solid var(--border)}
+.room-price{font-family:var(--serif);font-size:26px;color:var(--gold);font-weight:600}
+.room-price-note{font-size:10px;color:var(--text3)}
+.room-cta{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--forest)}
+.room-cta::after{content:' →'}
+
+/* ═══ MODAL (room detail / booking) ═══ */
+.modal-ov{display:none;position:fixed;inset:0;z-index:300;background:rgba(16,24,18,0.85);align-items:flex-start;justify-content:center;padding:32px 18px;overflow-y:auto}
+.modal-ov.on{display:flex}
+.modal{background:#fff;width:100%;max-width:1000px;position:relative;animation:mfade 0.28s ease;box-shadow:0 30px 70px rgba(0,0,0,0.35)}
+@keyframes mfade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.mc{position:absolute;top:18px;right:18px;z-index:4;background:rgba(16,24,18,0.55);border:1px solid rgba(255,255,255,0.3);color:#fff;width:34px;height:34px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:17px;transition:all 0.2s}
+.mc:hover{background:var(--gold);color:var(--forest-d)}
+.m-gallery{background:var(--cream2)}
+.m-main{width:100%;aspect-ratio:16/8.5;overflow:hidden;position:relative}
+.m-main img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity 0.25s}
+.m-thumbs{display:flex;gap:2px;background:var(--border)}
+.m-thumb{flex:1;aspect-ratio:16/9;overflow:hidden;cursor:pointer;opacity:0.48;transition:opacity 0.2s}
+.m-thumb:hover{opacity:0.75}
+.m-thumb.on{opacity:1}
+.m-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.m-body{display:grid;grid-template-columns:1.15fr 0.85fr}
+.m-info{padding:36px 40px;border-right:1px solid var(--border)}
+.m-tag{font-size:10px;color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;font-weight:700;margin-bottom:6px}
+.m-name{font-family:var(--serif);font-size:32px;font-weight:600;color:var(--forest);margin-bottom:14px}
+.m-desc{font-size:14px;color:var(--text2);line-height:1.85;margin-bottom:24px}
+.m-amen-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px}
+.m-amen{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--text)}
+.m-amen svg{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:1.6;flex-shrink:0}
+
+.m-booking{padding:36px 40px;background:var(--cream2)}
+.m-price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.m-price{font-family:var(--serif);font-size:34px;color:var(--gold);font-weight:600}
+.m-price-unit{font-size:12px;color:var(--text3)}
+.bk-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.bk-field label{display:block;font-size:9.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text3);margin-bottom:6px}
+.bk-field input,.bk-field select{width:100%;background:#fff;border:1px solid var(--border);color:var(--ink);padding:10px 12px;font-family:var(--font);font-size:13.5px;outline:none;transition:border-color 0.2s;-webkit-appearance:none}
+.bk-field input:focus,.bk-field select:focus{border-color:var(--gold)}
+.bk-summary{margin-top:18px;padding-top:18px;border-top:1px solid var(--border);font-size:12.5px;color:var(--text2)}
+.bk-sum-row{display:flex;justify-content:space-between;margin-bottom:8px}
+.bk-sum-total{display:flex;justify-content:space-between;font-weight:700;color:var(--forest);font-size:15px;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
+
+/* ═══ DINING PAGE ═══ */
+.rest-g{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff;border:1px solid var(--border);margin-bottom:1px}
+.rest-img{aspect-ratio:5/4;overflow:hidden}
+.rest-img img{width:100%;height:100%;object-fit:cover;display:block}
+.rest-info{padding:56px;display:flex;flex-direction:column;justify-content:center}
+.rest-name{font-family:var(--serif);font-size:34px;font-weight:600;color:var(--forest);margin-bottom:6px}
+.rest-cuisine{font-size:11px;color:var(--gold);letter-spacing:0.18em;text-transform:uppercase;font-weight:700;margin-bottom:18px}
+.rest-desc{font-size:14.5px;color:var(--text2);line-height:1.85;margin-bottom:24px}
+.rest-meta{display:flex;gap:32px;margin-bottom:28px}
+.rm-item .k{font-size:10px;color:var(--text3);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:4px}
+.rm-item .v{font-size:14px;font-weight:600;color:var(--forest)}
+
+.menu-sample{margin-top:90px}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;margin-top:48px}
+.menu-cat-title{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--forest);margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--gold)}
+.menu-item{display:flex;justify-content:space-between;gap:16px;margin-bottom:20px}
+.mi-name{font-size:14.5px;font-weight:600;color:var(--ink)}
+.mi-desc{font-size:12px;color:var(--text3);margin-top:3px;line-height:1.5}
+.mi-price{font-size:14px;color:var(--gold);font-weight:700;white-space:nowrap}
+
+/* ═══ EVENTS PAGE ═══ */
+.event-hero-g{display:grid;grid-template-columns:1.1fr 0.9fr;gap:0;background:#fff;border:1px solid var(--border)}
+.event-img{aspect-ratio:4/3.4;overflow:hidden}
+.event-img img{width:100%;height:100%;object-fit:cover;display:block}
+.event-info{padding:56px;display:flex;flex-direction:column;justify-content:center}
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin:90px 0 0}
+.cap-i{background:#fff;padding:40px 30px;text-align:center}
+.cap-n{font-family:var(--serif);font-size:38px;color:var(--gold);font-weight:600}
+.cap-l{font-size:12px;color:var(--text2);margin-top:8px;letter-spacing:0.04em}
+
+.event-types{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.et-card{background:#fff;border:1px solid var(--border);padding:32px 28px;transition:border-color 0.2s,transform 0.2s}
+.et-card:hover{border-color:var(--border-g);transform:translateY(-3px)}
+.et-icon{width:46px;height:46px;border:1px solid var(--border-g);background:var(--gold-dim);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.et-icon svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.4}
+.et-title{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--forest);margin-bottom:10px}
+.et-desc{font-size:13px;color:var(--text2);line-height:1.7}
+
+/* ═══ OFFERS PAGE ═══ */
+.offers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding:0 56px 100px}
+.offer-card{background:#fff;border:1px solid var(--border);overflow:hidden;transition:box-shadow 0.3s,transform 0.3s}
+.offer-card:hover{box-shadow:0 20px 44px rgba(16,34,24,0.1);transform:translateY(-4px)}
+.offer-img{aspect-ratio:16/10;overflow:hidden;position:relative}
+.offer-img img{width:100%;height:100%;object-fit:cover;display:block}
+.offer-tag{position:absolute;top:14px;left:14px;background:var(--gold);color:var(--forest-d);font-size:9.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:5px 12px}
+.offer-body{padding:26px}
+.offer-name{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--forest);margin-bottom:8px}
+.offer-desc{font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:18px}
+.offer-foot{display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid var(--border)}
+.offer-price{font-family:var(--serif);font-size:20px;color:var(--gold);font-weight:600}
+
+/* ═══ GALLERY PAGE ═══ */
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:0 56px 100px}
+.gal-item{aspect-ratio:1/1;overflow:hidden;cursor:pointer}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease;display:block}
+.gal-item:hover img{transform:scale(1.08)}
+.gal-item.tall{aspect-ratio:1/2;grid-row:span 2}
+
+/* ═══ ABOUT PAGE ═══ */
+.about-hero-g{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center;padding:96px 56px}
+.about-story-img{position:relative;aspect-ratio:4/5}
+.about-story-img img{width:100%;height:100%;object-fit:cover;display:block}
+.timeline{margin-top:48px}
+.tl-item{display:grid;grid-template-columns:80px 1fr;gap:24px;padding-bottom:32px;position:relative}
+.tl-item:not(:last-child)::before{content:'';position:absolute;left:39px;top:28px;bottom:0;width:1px;background:var(--border-g)}
+.tl-year{font-family:var(--serif);font-size:18px;color:var(--gold);font-weight:600}
+.tl-text{font-size:13.5px;color:var(--text2);line-height:1.7}
+.tl-text b{color:var(--forest);font-weight:700}
+
+/* ═══ CONTACT PAGE ═══ */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 84px)}
+.ct-left{background:var(--forest);color:var(--cream);padding:80px;display:flex;flex-direction:column;justify-content:center}
+.ct-left .sec-ey{color:var(--gold-l)}
+.ct-left h2.sec-h{color:#fff}
+.ct-right{padding:80px;display:flex;flex-direction:column;justify-content:center}
+.ct-item{display:flex;gap:16px;align-items:flex-start;margin-bottom:30px}
+.ct-ic{width:40px;height:40px;border:1px solid var(--gold-l);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ct-ic svg{width:18px;height:18px;stroke:var(--gold-l);fill:none;stroke-width:1.5}
+.ct-lbl{font-size:10px;color:rgba(255,255,255,0.5);letter-spacing:0.18em;text-transform:uppercase;font-weight:600;margin-bottom:4px}
+.ct-val{font-size:14.5px;color:#fff;font-weight:500;line-height:1.7}
+.ct-val a{color:#fff;text-decoration:none;transition:color 0.2s}
+.ct-val a:hover{color:var(--gold-l)}
+.map-box{width:100%;height:220px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;margin-top:36px;position:relative;overflow:hidden}
+.map-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(201,162,39,0.1) 1px,transparent 1px),linear-gradient(90deg,rgba(201,162,39,0.1) 1px,transparent 1px);background-size:28px 28px}
+.map-pin{position:relative;z-index:1;text-align:center}
+.map-pin svg{width:32px;height:32px;stroke:var(--gold-l);fill:none;stroke-width:1.5}
+.map-pin p{font-size:11px;color:rgba(255,255,255,0.6);margin-top:6px}
+.fg{margin-bottom:18px}
+.fg label{display:block;font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--text3);margin-bottom:7px}
+.fg input,.fg select,.fg textarea{width:100%;background:var(--cream2);border:1px solid var(--border);color:var(--ink);padding:11px 14px;font-family:var(--font);font-size:14px;outline:none;transition:border-color 0.2s;resize:vertical;-webkit-appearance:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fsuccess{display:none;background:var(--gold-dim);border:1px solid var(--border-g);padding:14px 18px;font-size:13px;color:var(--forest);margin-top:14px}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .amen-g{grid-template-columns:repeat(2,1fr)}
+  .rooms-grid{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .offers-grid{grid-template-columns:1fr;padding:0 24px 80px}
+  .cap-grid{grid-template-columns:1fr}
+}
+@media(max-width:1024px){
+  nav{padding:0 22px;height:72px}
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .page{padding-top:72px}
+  .sec,.sec.tight{padding:64px 24px}
+  .intro-g,.dine-g,.event-hero-g,.about-hero-g{grid-template-columns:1fr;gap:40px}
+  .rooms-strip,.testi-g{grid-template-columns:1fr}
+  .room-card,.rest-g{grid-template-columns:1fr}
+  .m-body{grid-template-columns:1fr}
+  .m-info{border-right:none;border-bottom:1px solid var(--border)}
+  .menu-grid{grid-template-columns:1fr;gap:36px}
+  .contact-wrap{grid-template-columns:1fr}
+  .ct-left,.ct-right{padding:48px 24px}
+  footer{grid-template-columns:1fr 1fr;padding:48px 24px}
+  .f-bot{padding:18px 24px}
+  .room-filters{padding:36px 24px 0}
+  .rooms-grid{padding:36px 24px 70px}
+  .booking-bar{flex-direction:column}
+  .bb-field{border-right:none;border-bottom:0.5px solid var(--border)}
+  .event-types{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  h1.hero-h1{font-size:38px}
+  .gal-grid{grid-template-columns:repeat(2,1fr);padding:0 16px 60px}
+  .frow,.bk-row{grid-template-columns:1fr}
+  footer{grid-template-columns:1fr}
+  .m-amen-list{grid-template-columns:1fr}
+}
+.mob-menu{display:none;position:fixed;inset:0;z-index:199;background:var(--cream);padding:96px 24px 24px;flex-direction:column;gap:2px}
+.mob-menu.on{display:flex}
+.mob-menu a{font-size:22px;font-weight:400;font-family:var(--serif);color:var(--forest);text-decoration:none;padding:14px 0;border-bottom:0.5px solid var(--border);cursor:pointer}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo" onclick="go('home')">
+    <div class="logo-mark">A</div>
+    <div class="logo-text"><span class="logo-name">ATT Hotel</span><span class="logo-sub">Boutique · Accra</span></div>
+  </div>
+  <ul class="nav-links">
+    <li><a id="nl-home" class="on" onclick="go('home')">Home</a></li>
+    <li><a id="nl-rooms" onclick="go('rooms')">Rooms</a></li>
+    <li><a id="nl-dining" onclick="go('dining')">Dining</a></li>
+    <li><a id="nl-events" onclick="go('events')">Events</a></li>
+    <li><a id="nl-offers" onclick="go('offers')">Offers</a></li>
+    <li><a id="nl-gallery" onclick="go('gallery')">Gallery</a></li>
+    <li><a id="nl-about" onclick="go('about')">About</a></li>
+    <li><a id="nl-contact" onclick="go('contact')">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="go('rooms')">Book Now</button>
+  <button class="hamburger" onclick="togMob()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mob-menu" id="mobMenu">
+  <a onclick="go('home');togMob()">Home</a>
+  <a onclick="go('rooms');togMob()">Rooms</a>
+  <a onclick="go('dining');togMob()">Dining</a>
+  <a onclick="go('events');togMob()">Events</a>
+  <a onclick="go('offers');togMob()">Offers</a>
+  <a onclick="go('gallery');togMob()">Gallery</a>
+  <a onclick="go('about');togMob()">About</a>
+  <a onclick="go('contact');togMob()">Contact</a>
+</div>
+
+<!-- ══════════ HOME ══════════ -->
+<div id="pg-home" class="page on">
+  <section class="hero">
+    <div class="hero-slides" id="heroSlides"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow"><span class="ln"></span>Boutique Luxury Hotel · Accra, Ghana<span class="ln"></span></div>
+      <h1 class="hero-h1">A Sanctuary of<br><em>Quiet Luxury</em></h1>
+      <p class="hero-sub">Eighteen rooms. One philosophy: that true hospitality is measured in details, not size. Welcome to ATT Hotel.</p>
+      <div class="booking-bar">
+        <div class="bb-field">
+          <span class="bb-label">Check In</span>
+          <input type="date" id="hb-in">
+        </div>
+        <div class="bb-field">
+          <span class="bb-label">Check Out</span>
+          <input type="date" id="hb-out">
+        </div>
+        <div class="bb-field">
+          <span class="bb-label">Guests</span>
+          <select id="hb-guests">
+            <option>1 Guest</option><option selected>2 Guests</option><option>3 Guests</option><option>4+ Guests</option>
+          </select>
+        </div>
+        <div class="bb-field">
+          <span class="bb-label">Room Type</span>
+          <select id="hb-room">
+            <option>Any Room</option><option>Garden Room</option><option>Forest Suite</option><option>Executive Suite</option><option>The Presidential</option>
+          </select>
+        </div>
+        <button class="bb-cta" onclick="go('rooms')">Check Availability</button>
+      </div>
+    </div>
+    <div class="hero-dots" id="heroDots"></div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="sec">
+    <div class="intro-g">
+      <div class="intro-img fu">
+        <div class="intro-img-accent"></div>
+        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&q=85" alt="ATT Hotel entrance">
+      </div>
+      <div class="intro-text fu">
+        <div class="sec-ey"><span class="ln"></span>Welcome to ATT</div>
+        <h2 class="sec-h">Where Accra's Energy<br>Meets <em>Stillness</em></h2>
+        <p style="margin-top:22px">Tucked behind a canopy of frangipani trees just minutes from the city's pulse, ATT Hotel was built for travellers who want Accra's warmth without its noise. Every room is designed around natural light, hand-finished furniture, and views of our courtyard gardens.</p>
+        <p>Since opening, we've welcomed diplomats, honeymooners, and families marking milestones — each given the same unhurried attention. Our team is small by design, so that no request goes unanswered.</p>
+        <div class="intro-stats">
+          <div class="istat"><span class="istat-n">18</span><span class="istat-l">Rooms & Suites</span></div>
+          <div class="istat"><span class="istat-n">9</span><span class="istat-l">Years Hosting</span></div>
+          <div class="istat"><span class="istat-n">4.9</span><span class="istat-l">Guest Rating</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOMS STRIP -->
+  <section class="sec tight">
+    <div class="center" style="max-width:560px">
+      <div class="sec-ey center" style="justify-content:center"><span class="ln"></span>Stay With Us</div>
+      <h2 class="sec-h">Rooms & Suites</h2>
+      <p class="sec-sub center">Each room tells its own story — from garden-facing doubles to our private Presidential Suite.</p>
+    </div>
+    <div class="rooms-strip">
+      <div class="rstrip-item fu" onclick="go('rooms')">
+        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=700&q=85" alt="Garden Room">
+        <div class="rstrip-ov"><div class="rstrip-tag">Garden View</div><div class="rstrip-name">Garden Room</div><div class="rstrip-price">From GHS 950 / night</div></div>
+      </div>
+      <div class="rstrip-item fu" onclick="go('rooms')">
+        <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?w=700&q=85" alt="Forest Suite">
+        <div class="rstrip-ov"><div class="rstrip-tag">Most Popular</div><div class="rstrip-name">Forest Suite</div><div class="rstrip-price">From GHS 1,450 / night</div></div>
+      </div>
+      <div class="rstrip-item fu" onclick="go('rooms')">
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=700&q=85" alt="Presidential Suite">
+        <div class="rstrip-ov"><div class="rstrip-tag">Top Tier</div><div class="rstrip-name">The Presidential</div><div class="rstrip-price">From GHS 3,200 / night</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMENITIES -->
+  <section class="sec amen-bg">
+    <div class="center" style="max-width:560px">
+      <div class="sec-ey center" style="justify-content:center"><span class="ln"></span>The ATT Experience</div>
+      <h2 class="sec-h">Everything You Need,<br>Nothing You Don't</h2>
+    </div>
+    <div class="amen-g">
+      <div class="amen-i fu"><div class="amen-icon"><svg viewBox="0 0 24 24"><path d="M2 12h20M2 12a10 10 0 0020 0M2 12a10 10 0 0120 0M12 2v20"/></svg></div><div class="amen-t">Free Wi-Fi</div><div class="amen-d">High-speed connectivity throughout the property, indoors and in the gardens.</div></div>
+      <div class="amen-i fu"><div class="amen-icon"><svg viewBox="0 0 24 24"><path d="M2 18h20M4 18v-6a2 2 0 012-2h12a2 2 0 012 2v6M9 10V6a3 3 0 016 0v4"/></svg></div><div class="amen-t">Outdoor Pool</div><div class="amen-d">A heated pool surrounded by palms, open from dawn until late evening.</div></div>
+      <div class="amen-i fu"><div class="amen-icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.5 8 2 4 6 4c2 0 4 1.5 6 4 2-2.5 4-4 6-4 4 0 5.5 4 3.5 8-2.5 4.5-9.5 9-9.5 9z"/></svg></div><div class="amen-t">Spa & Wellness</div><div class="amen-d">Traditional Ghanaian shea-butter massage and a steam room, by appointment.</div></div>
+      <div class="amen-i fu"><div class="amen-icon"><svg viewBox="0 0 24 24"><path d="M6.5 6.5h11v11h-11v-11zM9 9h6v6H9V9z"/></svg></div><div class="amen-t">Airport Transfer</div><div class="amen-d">Complimentary pickup and drop-off from Kotoka International Airport.</div></div>
+      <div class="amen-i fu"><div class="amen-icon"><svg viewBox="0 0 24 24"><path d="M4 17h16M6 17V8a2 2 0 012-2h8a2 2 0 012 2v9M2 21h20"/></svg></div><div class="amen-t">Secure Parking</div><div class="amen-d">Gated, attended parking for self-drive guests and visitors.</div></div>
+      <div class="amen-i fu"><div class="amen-icon"><svg viewBox="0 0 24 24"><path d="M6.5 12a5.5 5.5 0 1011 0 5.5 5.5 0 00-11 0z"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div><div class="amen-t">Fitness Studio</div><div class="amen-d">A small, well-equipped gym open 24 hours for hotel guests.</div></div>
+      <div class="amen-i fu"><div class="amen-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4V4zM4 9h16M9 4v16"/></svg></div><div class="amen-t">Laundry Service</div><div class="amen-d">Same-day laundry and pressing for guests staying two nights or more.</div></div>
+      <div class="amen-i fu"><div class="amen-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div class="amen-t">24-Hour Front Desk</div><div class="amen-d">Someone is always awake, so a question never has to wait for morning.</div></div>
+    </div>
+  </section>
+
+  <!-- DINING TEASER -->
+  <section class="sec">
+    <div class="dine-g">
+      <div class="fu" style="position:relative">
+        <div class="dine-img">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=85" alt="ATT Restaurant">
+        </div>
+        <div class="dine-badge"><div class="n">Est.<br>2017</div></div>
+      </div>
+      <div class="fu">
+        <div class="sec-ey"><span class="ln"></span>Dine With Us</div>
+        <h2 class="sec-h">The Frangipani<br><em>Restaurant & Bar</em></h2>
+        <p class="sec-sub">A small kitchen with a big idea: Ghanaian ingredients, classic technique. Breakfast on the terrace, dinner under the stars.</p>
+        <div class="dine-list">
+          <div class="dine-item"><div><div class="di-name">Breakfast</div><div class="di-desc">Included for all guests</div></div><div class="di-hours">6:30 – 10:30am</div></div>
+          <div class="dine-item"><div><div class="di-name">Lunch</div><div class="di-desc">Light terrace menu</div></div><div class="di-hours">12:00 – 3:00pm</div></div>
+          <div class="dine-item"><div><div class="di-name">Dinner</div><div class="di-desc">Full à la carte & bar</div></div><div class="di-hours">6:30 – 10:30pm</div></div>
+        </div>
+        <div style="margin-top:28px"><button class="btn-o" onclick="go('dining')">View Full Menu</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="sec tight testi-wrap">
+    <div class="center" style="max-width:520px">
+      <div class="sec-ey center" style="justify-content:center"><span class="ln"></span>Guest Stories</div>
+      <h2 class="sec-h">What People Remember<br>Most About ATT</h2>
+    </div>
+    <div class="testi-g">
+      <div class="testi fu"><div class="testi-stars">★★★★★</div><p>"From the welcome drink to the staff remembering my name on day two — this is what hospitality should feel like. We're already planning our anniversary trip back."</p><div class="testi-name">Naa Adjoa Mensah</div><div class="testi-loc">Accra, Ghana</div></div>
+      <div class="testi fu"><div class="testi-stars">★★★★★</div><p>"I travel for work constantly and rarely feel at ease in a hotel. ATT is different — quiet, well-run, and the breakfast alone is worth the stay."</p><div class="testi-name">David Okafor</div><div class="testi-loc">Lagos, Nigeria</div></div>
+      <div class="testi fu"><div class="testi-stars">★★★★★</div><p>"We held our engagement dinner in the garden pavilion. The events team handled every detail so we could just enjoy the evening. Truly grateful."</p><div class="testi-name">Linda & Kwabena</div><div class="testi-loc">Kumasi, Ghana</div></div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="cta-band-bg"></div>
+    <div class="cta-band-shade"></div>
+    <div class="cta-band-c">
+      <h2>Your Room Is Waiting</h2>
+      <p>Best rates are always found when you book directly with us — no commission, no middleman, just a warm welcome.</p>
+      <button class="btn-g" onclick="go('rooms')">Check Availability</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="f-brand">
+      <div class="logo" style="cursor:default"><div class="logo-mark">A</div><div class="logo-text"><span class="logo-name">ATT Hotel</span><span class="logo-sub">Boutique · Accra</span></div></div>
+      <p>A boutique luxury hotel in Accra, Ghana — eighteen rooms, one restaurant, and a garden built for stillness.</p>
+      <div class="f-social"><a>f</a><a>ig</a><a>tw</a></div>
+    </div>
+    <div class="fc"><h4>Explore</h4><a onclick="go('rooms')">Rooms & Suites</a><a onclick="go('dining')">Dining</a><a onclick="go('events')">Events</a><a onclick="go('offers')">Offers</a><a onclick="go('gallery')">Gallery</a></div>
+    <div class="fc"><h4>Hotel</h4><a onclick="go('about')">Our Story</a><a onclick="go('contact')">Contact</a><a>Careers</a><a>Press</a></div>
+    <div class="fc"><h4>Contact</h4><a href="tel:+233244000000">+233 244 000 000</a><a href="mailto:reservations@atthotel.com">reservations@atthotel.com</a><a>Cantonments, Accra</a></div>
+  </footer>
+  <div class="f-bot"><p>© 2025 ATT Hotel. All rights reserved.</p><p>Accra, Ghana</p></div>
+</div>
+
+<!-- ══════════ ROOMS PAGE ══════════ -->
+<div id="pg-rooms" class="page">
+  <div class="pg-hd">
+    <div class="pg-hd-bg" style="background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1800&q=80')"></div>
+    <div class="pg-hd-shade"></div>
+    <div class="pg-hd-c">
+      <div class="sec-ey"><span class="ln"></span>Accommodation</div>
+      <h1>Rooms & Suites</h1>
+      <p>Eighteen rooms across four categories, each facing our courtyard gardens or the city skyline.</p>
+    </div>
+  </div>
+  <div class="room-filters">
+    <button class="fb on" onclick="rF('all',this)">All Rooms</button>
+    <button class="fb" onclick="rF('garden',this)">Garden Room</button>
+    <button class="fb" onclick="rF('forest',this)">Forest Suite</button>
+    <button class="fb" onclick="rF('executive',this)">Executive Suite</button>
+    <button class="fb" onclick="rF('presidential',this)">Presidential</button>
+  </div>
+  <div class="rooms-grid" id="roomsGrid"></div>
+
+  <footer style="margin-top:0">
+    <div class="f-brand"><div class="logo" style="cursor:default"><div class="logo-mark">A</div><div class="logo-text"><span class="logo-name">ATT Hotel</span><span class="logo-sub">Boutique · Accra</span></div></div><p>Boutique luxury in the heart of Accra.</p></div>
+    <div class="fc"><h4>Explore</h4><a onclick="go('dining')">Dining</a><a onclick="go('events')">Events</a><a onclick="go('offers')">Offers</a></div>
+    <div class="fc"><h4>Contact</h4><a href="tel:+233244000000">+233 244 000 000</a><a href="mailto:reservations@atthotel.com">reservations@atthotel.com</a></div>
+    <div class="fc"><h4>Hours</h4><a>Front Desk: 24 Hours</a><a>Check-in: 2:00pm</a></div>
+  </footer>
+  <div class="f-bot"><p>© 2025 ATT Hotel.</p></div>
+</div>
+
+<!-- ══════════ DINING PAGE ══════════ -->
+<div id="pg-dining" class="page">
+  <div class="pg-hd">
+    <div class="pg-hd-bg" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1800&q=80')"></div>
+    <div class="pg-hd-shade"></div>
+    <div class="pg-hd-c">
+      <div class="sec-ey"><span class="ln"></span>Dining</div>
+      <h1>The Frangipani</h1>
+      <p>Restaurant & Bar — Ghanaian ingredients, classic technique, garden views.</p>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="rest-g">
+      <div class="rest-img"><img src="https://images.unsplash.com/photo-1592861956120-e524fc739696?w=800&q=85" alt="Frangipani Restaurant"></div>
+      <div class="rest-info">
+        <div class="rest-cuisine">Modern Ghanaian · Continental</div>
+        <div class="rest-name">The Frangipani Restaurant & Bar</div>
+        <p class="rest-desc">Our kitchen is led by Chef Adwoa Frimpong, who trained in Accra and Lyon before bringing her style home. The menu changes with the seasons but always returns to the same idea: familiar Ghanaian flavours, plated with care.</p>
+        <div class="rest-meta">
+          <div class="rm-item"><div class="k">Seating</div><div class="v">60 Indoor · 40 Terrace</div></div>
+          <div class="rm-item"><div class="k">Dress Code</div><div class="v">Smart Casual</div></div>
+          <div class="rm-item"><div class="k">Reservations</div><div class="v">Recommended</div></div>
+        </div>
+        <button class="btn-g" onclick="go('contact')">Reserve a Table</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec menu-sample">
+    <div class="center" style="max-width:520px">
+      <div class="sec-ey center" style="justify-content:center"><span class="ln"></span>From The Menu</div>
+      <h2 class="sec-h">A Taste of The Frangipani</h2>
+      <p class="sec-sub center">A small selection from our dinner menu — full menu available at the restaurant.</p>
+    </div>
+    <div class="menu-grid">
+      <div>
+        <div class="menu-cat-title">Starters</div>
+        <div class="menu-item"><div><div class="mi-name">Kelewele-Spiced Prawns</div><div class="mi-desc">Sweet plantain spice rub, lime, fresh chilli</div></div><div class="mi-price">GHS 85</div></div>
+        <div class="menu-item"><div><div class="mi-name">Garden Tomato & Avocado</div><div class="mi-desc">Heirloom tomatoes, smoked shea oil, basil</div></div><div class="mi-price">GHS 60</div></div>
+        <div class="menu-item"><div><div class="mi-name">Smoked Tilapia Croquettes</div><div class="mi-desc">Scotch bonnet aioli, pickled shallot</div></div><div class="mi-price">GHS 70</div></div>
+      </div>
+      <div>
+        <div class="menu-cat-title">Main Courses</div>
+        <div class="menu-item"><div><div class="mi-name">Grilled Red Snapper</div><div class="mi-desc">Jollof risotto, garden greens, pepper sauce</div></div><div class="mi-price">GHS 165</div></div>
+        <div class="menu-item"><div><div class="mi-name">Slow-Braised Goat Shank</div><div class="mi-desc">Palm butter sauce, fonio, charred plantain</div></div><div class="mi-price">GHS 180</div></div>
+        <div class="menu-item"><div><div class="mi-name">Frangipani Vegetable Plate</div><div class="mi-desc">Seasonal roast vegetables, groundnut sauce</div></div><div class="mi-price">GHS 110</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="margin-top:0">
+    <div class="f-brand"><div class="logo" style="cursor:default"><div class="logo-mark">A</div><div class="logo-text"><span class="logo-name">ATT Hotel</span><span class="logo-sub">Boutique · Accra</span></div></div><p>Boutique luxury in the heart of Accra.</p></div>
+    <div class="fc"><h4>Explore</h4><a onclick="go('rooms')">Rooms</a><a onclick="go('events')">Events</a><a onclick="go('offers')">Offers</a></div>
+    <div class="fc"><h4>Contact</h4><a href="tel:+233244000000">+233 244 000 000</a><a href="mailto:reservations@atthotel.com">reservations@atthotel.com</a></div>
+    <div class="fc"><h4>Restaurant Hours</h4><a>Breakfast: 6:30–10:30am</a><a>Dinner: 6:30–10:30pm</a></div>
+  </footer>
+  <div class="f-bot"><p>© 2025 ATT Hotel.</p></div>
+</div>
+
+<!-- ══════════ EVENTS PAGE ══════════ -->
+<div id="pg-events" class="page">
+  <div class="pg-hd">
+    <div class="pg-hd-bg" style="background-image:url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1800&q=80')"></div>
+    <div class="pg-hd-shade"></div>
+    <div class="pg-hd-c">
+      <div class="sec-ey"><span class="ln"></span>Events & Celebrations</div>
+      <h1>The Garden Pavilion</h1>
+      <p>Weddings, corporate retreats, and milestone celebrations, hosted with the same care as our guest rooms.</p>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="event-hero-g">
+      <div class="event-img"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=85" alt="Garden Pavilion setup"></div>
+      <div class="event-info">
+        <div class="sec-ey"><span class="ln"></span>A Space That Adapts To You</div>
+        <h2 class="sec-h">One Pavilion,<br><em>Many Occasions</em></h2>
+        <p class="sec-sub">Our garden pavilion seats up to 120 guests under open sky or a covered canopy, with private access to the hotel's kitchen and bar. Past events have included weddings, board retreats, milestone birthdays, and product launches.</p>
+        <div style="margin-top:28px"><button class="btn-g" onclick="go('contact')">Enquire About Your Event</button></div>
+      </div>
+    </div>
+
+    <div class="cap-grid">
+      <div class="cap-i"><div class="cap-n">120</div><div class="cap-l">Guests, Seated Reception</div></div>
+      <div class="cap-i"><div class="cap-n">200</div><div class="cap-l">Guests, Standing Reception</div></div>
+      <div class="cap-i"><div class="cap-n">8</div><div class="cap-l">Hours of Exclusive Access</div></div>
+    </div>
+  </section>
+
+  <section class="sec tight">
+    <div class="center" style="max-width:520px">
+      <div class="sec-ey center" style="justify-content:center"><span class="ln"></span>What We Host</div>
+      <h2 class="sec-h">Built For Every Occasion</h2>
+    </div>
+    <div class="event-types">
+      <div class="et-card fu"><div class="et-icon"><svg viewBox="0 0 24 24"><path d="M12 2C9 6 7 9 7 12a5 5 0 0010 0c0-3-2-6-5-10z"/></svg></div><div class="et-title">Weddings</div><div class="et-desc">Garden ceremonies, full-service reception planning, and an in-house coordinator for your day.</div></div>
+      <div class="et-card fu"><div class="et-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 9h16M9 4v16"/></svg></div><div class="et-title">Corporate Events</div><div class="et-desc">Board retreats, off-sites, and product launches with AV support and private dining.</div></div>
+      <div class="et-card fu"><div class="et-icon"><svg viewBox="0 0 24 24"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z"/></svg></div><div class="et-title">Private Celebrations</div><div class="et-desc">Birthdays, anniversaries, and naming ceremonies, catered by The Frangipani kitchen.</div></div>
+    </div>
+  </section>
+
+  <footer style="margin-top:0">
+    <div class="f-brand"><div class="logo" style="cursor:default"><div class="logo-mark">A</div><div class="logo-text"><span class="logo-name">ATT Hotel</span><span class="logo-sub">Boutique · Accra</span></div></div><p>Boutique luxury in the heart of Accra.</p></div>
+    <div class="fc"><h4>Explore</h4><a onclick="go('rooms')">Rooms</a><a onclick="go('dining')">Dining</a><a onclick="go('offers')">Offers</a></div>
+    <div class="fc"><h4>Contact</h4><a href="tel:+233244000000">+233 244 000 000</a><a href="mailto:events@atthotel.com">events@atthotel.com</a></div>
+    <div class="fc"><h4>Events Team</h4><a>Mon–Sat: 9am – 6pm</a></div>
+  </footer>
+  <div class="f-bot"><p>© 2025 ATT Hotel.</p></div>
+</div>
+
+<!-- ══════════ OFFERS PAGE ══════════ -->
+<div id="pg-offers" class="page">
+  <div class="pg-hd">
+    <div class="pg-hd-bg" style="background-image:url('https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=1800&q=80')"></div>
+    <div class="pg-hd-shade"></div>
+    <div class="pg-hd-c">
+      <div class="sec-ey"><span class="ln"></span>Offers & Packages</div>
+      <h1>Stay Longer, Save More</h1>
+      <p>Curated packages for getaways, honeymoons, and quiet long weekends.</p>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="offers-grid" style="padding:0">
+      <div class="offer-card fu">
+        <div class="offer-img"><span class="offer-tag">Save 20%</span><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=700&q=80" alt="Weekend Escape"></div>
+        <div class="offer-body">
+          <div class="offer-name">Weekend Escape</div>
+          <div class="offer-desc">Two nights in a Garden Room, breakfast included, and a complimentary bottle of wine on arrival.</div>
+          <div class="offer-foot"><div class="offer-price">From GHS 1,520</div><button class="btn-o" style="padding:9px 18px;font-size:10px" onclick="go('contact')">Enquire</button></div>
+        </div>
+      </div>
+      <div class="offer-card fu">
+        <div class="offer-img"><span class="offer-tag">Most Booked</span><img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?w=700&q=80" alt="Honeymoon Package"></div>
+        <div class="offer-body">
+          <div class="offer-name">Honeymoon Package</div>
+          <div class="offer-desc">Three nights in our Forest Suite, private dinner in the garden, and a couples spa session.</div>
+          <div class="offer-foot"><div class="offer-price">From GHS 4,890</div><button class="btn-o" style="padding:9px 18px;font-size:10px" onclick="go('contact')">Enquire</button></div>
+        </div>
+      </div>
+      <div class="offer-card fu">
+        <div class="offer-img"><span class="offer-tag">Business</span><img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=700&q=80" alt="Extended Stay"></div>
+        <div class="offer-body">
+          <div class="offer-name">Extended Stay</div>
+          <div class="offer-desc">Five nights or more in any room category, with daily laundry and airport transfers included.</div>
+          <div class="offer-foot"><div class="offer-price">15% Off Nightly Rate</div><button class="btn-o" style="padding:9px 18px;font-size:10px" onclick="go('contact')">Enquire</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="margin-top:0">
+    <div class="f-brand"><div class="logo" style="cursor:default"><div class="logo-mark">A</div><div class="logo-text"><span class="logo-name">ATT Hotel</span><span class="logo-sub">Boutique · Accra</span></div></div><p>Boutique luxury in the heart of Accra.</p></div>
+    <div class="fc"><h4>Explore</h4><a onclick="go('rooms')">Rooms</a><a onclick="go('dining')">Dining</a><a onclick="go('events')">Events</a></div>
+    <div class="fc"><h4>Contact</h4><a href="tel:+233244000000">+233 244 000 000</a><a href="mailto:reservations@atthotel.com">reservations@atthotel.com</a></div>
+    <div class="fc"><h4>Reservations</h4><a>24-Hour Front Desk</a></div>
+  </footer>
+  <div class="f-bot"><p>© 2025 ATT Hotel.</p></div>
+</div>
+
+<!-- ══════════ GALLERY PAGE ══════════ -->
+<div id="pg-gallery" class="page">
+  <div class="pg-hd" style="min-height:280px">
+    <div class="pg-hd-bg" style="background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1800&q=80')"></div>
+    <div class="pg-hd-shade"></div>
+    <div class="pg-hd-c">
+      <div class="sec-ey"><span class="ln"></span>Gallery</div>
+      <h1>Moments at ATT</h1>
+    </div>
+  </div>
+  <section class="sec tight">
+    <div class="gal-grid">
+      <div class="gal-item tall"><img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600&q=80" alt="Hotel exterior"></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?w=600&q=80" alt="Suite interior"></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=600&q=80" alt="Pool"></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Restaurant"></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80" alt="Presidential Suite"></div>
+      <div class="gal-item tall"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=80" alt="Event setup"></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1592861956120-e524fc739696?w=600&q=80" alt="Dining detail"></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80" alt="Room detail"></div>
+    </div>
+  </section>
+  <footer style="margin-top:0">
+    <div class="f-brand"><div class="logo" style="cursor:default"><div class="logo-mark">A</div><div class="logo-text"><span class="logo-name">ATT Hotel</span><span class="logo-sub">Boutique · Accra</span></div></div><p>Boutique luxury in the heart of Accra.</p></div>
+    <div class="fc"><h4>Explore</h4><a onclick="go('rooms')">Rooms</a><a onclick="go('dining')">Dining</a></div>
+    <div class="fc"><h4>Contact</h4><a href="tel:+233244000000">+233 244 000 000</a></div>
+    <div class="fc"><h4></h4></div>
+  </footer>
+  <div class="f-bot"><p>© 2025 ATT Hotel.</p></div>
+</div>
+
+<!-- ══════════ ABOUT PAGE ══════════ -->
+<div id="pg-about" class="page">
+  <div class="pg-hd">
+    <div class="pg-hd-bg" style="background-image:url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1800&q=80')"></div>
+    <div class="pg-hd-shade"></div>
+    <div class="pg-hd-c">
+      <div class="sec-ey"><span class="ln"></span>Our Story</div>
+      <h1>About ATT Hotel</h1>
+      <p>Nine years of quiet hospitality in the heart of Accra.</p>
+    </div>
+  </div>
+
+  <div class="about-hero-g">
+    <div class="about-story-img fu"><img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=85" alt="ATT Hotel founder moment"></div>
+    <div class="fu">
+      <div class="sec-ey"><span class="ln"></span>How We Began</div>
+      <h2 class="sec-h">Built on One Idea: <em>Be Remembered</em></h2>
+      <p class="sec-sub">ATT Hotel was founded in 2016 by the Tetteh family, who converted their family compound in Cantonments into Accra's first true boutique hotel. The goal was never to be the biggest — it was to be the one guests talk about years later.</p>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-year">2016</div><div class="tl-text"><b>ATT Hotel opens</b> with eight rooms and a single chef in the kitchen.</div></div>
+        <div class="tl-item"><div class="tl-year">2019</div><div class="tl-text"><b>The Frangipani Restaurant</b> opens to the public, beyond hotel guests.</div></div>
+        <div class="tl-item"><div class="tl-year">2022</div><div class="tl-text"><b>Garden Pavilion completed</b>, hosting our first hotel wedding.</div></div>
+        <div class="tl-item"><div class="tl-year">2025</div><div class="tl-text"><b>Eighteen rooms</b> across four categories, with a 4.9 average guest rating.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <footer style="margin-top:0">
+    <div class="f-brand"><div class="logo" style="cursor:default"><div class="logo-mark">A</div><div class="logo-text"><span class="logo-name">ATT Hotel</span><span class="logo-sub">Boutique · Accra</span></div></div><p>Boutique luxury in the heart of Accra.</p></div>
+    <div class="fc"><h4>Explore</h4><a onclick="go('rooms')">Rooms</a><a onclick="go('dining')">Dining</a></div>
+    <div class="fc"><h4>Contact</h4><a href="tel:+233244000000">+233 244 000 000</a></div>
+    <div class="fc"><h4></h4></div>
+  </footer>
+  <div class="f-bot"><p>© 2025 ATT Hotel.</p></div>
+</div>
+
+<!-- ══════════ CONTACT PAGE ══════════ -->
+<div id="pg-contact" class="page">
+  <div class="contact-wrap">
+    <div class="ct-left">
+      <div class="sec-ey"><span class="ln"></span>Get In Touch</div>
+      <h2 class="sec-h" style="margin-bottom:10px">We'd Love to<br>Hear From You</h2>
+      <p style="color:rgba(255,255,255,0.7);font-size:14.5px;line-height:1.85;margin:18px 0 36px">Whether it's a room enquiry, a table reservation, or planning an event — our team typically responds within a few hours.</p>
+      <div class="ct-item"><div class="ct-ic"><svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><div><div class="ct-lbl">Location</div><div class="ct-val">12 Frangipani Lane, Cantonments<br>Accra, Ghana</div></div></div>
+      <div class="ct-item"><div class="ct-ic"><svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div><div><div class="ct-lbl">Phone</div><div class="ct-val"><a href="tel:+233244000000">+233 244 000 000</a></div></div></div>
+      <div class="ct-item"><div class="ct-ic"><svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div><div class="ct-lbl">Email</div><div class="ct-val"><a href="mailto:reservations@atthotel.com">reservations@atthotel.com</a></div></div></div>
+      <div class="ct-item"><div class="ct-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="ct-lbl">Front Desk</div><div class="ct-val">Open 24 Hours<br>Check-in 2:00pm · Check-out 11:00am</div></div></div>
+      <div class="map-box"><div class="map-lines"></div><div class="map-pin"><svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg><p>Cantonments, Accra</p></div></div>
+    </div>
+    <div class="ct-right">
+      <div class="sec-ey"><span class="ln"></span>Send a Message</div>
+      <h2 class="sec-h" style="margin-bottom:26px">Make an Enquiry</h2>
+      <div class="frow"><div class="fg"><label>First Name</label><input type="text" id="fn" placeholder="Naa"></div><div class="fg"><label>Last Name</label><input type="text" id="ln" placeholder="Mensah"></div></div>
+      <div class="fg"><label>Email Address</label><input type="email" id="em" placeholder="naa@example.com"></div>
+      <div class="fg"><label>Phone Number</label><input type="tel" id="ph" placeholder="+233 ..."></div>
+      <div class="fg"><label>This Enquiry Is About</label><select id="int"><option value="">Select an option...</option><option>Room Reservation</option><option>Restaurant Booking</option><option>Wedding / Event</option><option>General Question</option></select></div>
+      <div class="fg"><label>Message</label><textarea id="msg" rows="4" placeholder="Tell us a bit about your stay..."></textarea></div>
+      <button class="btn-g btn-full" onclick="send()">Send Message</button>
+      <div class="fsuccess" id="fok">✓ Message sent. Our team will be in touch shortly.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ ROOM DETAIL / BOOKING MODAL ══════════ -->
+<div class="modal-ov" id="mOv" onclick="mBg(event)">
+  <div class="modal" id="modal">
+    <button class="mc" onclick="mClose()">✕</button>
+    <div class="m-gallery">
+      <div class="m-main" id="mMain"></div>
+      <div class="m-thumbs" id="mThumbs"></div>
+    </div>
+    <div class="m-body">
+      <div class="m-info" id="mInfo"></div>
+      <div class="m-booking" id="mBooking"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const ROOMS=[
+  {id:1,cat:'garden',tag:'Garden View',name:'Garden Room',price:950,size:'28 m²',occ:'2 Adults',bed:'Queen Bed',
+   imgs:[
+     {u:'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1100&q=85',l:'Room'},
+     {u:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1100&q=80',l:'Bathroom'},
+     {u:'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1100&q=80',l:'View'},
+   ],
+   desc:'Our entry-level room, facing the courtyard garden. Warm wood floors, a private balcony, and everything you need for a peaceful stay in the city.',
+   feats:['Garden View','28 m²','Queen Bed','Free Wi-Fi'],
+   amenities:['Air Conditioning','Free Wi-Fi','Mini Fridge','Rain Shower','Garden Balcony','Daily Housekeeping']},
+  {id:2,cat:'forest',tag:'Most Popular',name:'Forest Suite',price:1450,size:'42 m²',occ:'2 Adults, 1 Child',bed:'King Bed',
+   imgs:[
+     {u:'https://images.unsplash.com/photo-1591088398332-8a7791972843?w=1100&q=85',l:'Suite'},
+     {u:'https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?w=1100&q=80',l:'Lounge'},
+     {u:'https://images.unsplash.com/photo-1631049552057-403cdb8f0658?w=1100&q=80',l:'Bathroom'},
+   ],
+   desc:'A spacious suite with a separate sitting area, soaking tub, and direct views over the hotel\'s frangipani garden. Our most-booked category.',
+   feats:['Forest View','42 m²','King Bed','Sitting Area'],
+   amenities:['Air Conditioning','Free Wi-Fi','Soaking Tub','Nespresso Machine','Sitting Area','Daily Housekeeping','Bathrobe & Slippers','Mini Bar']},
+  {id:3,cat:'executive',tag:'Business Friendly',name:'Executive Suite',price:2100,size:'58 m²',occ:'2 Adults',bed:'King Bed',
+   imgs:[
+     {u:'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1100&q=85',l:'Suite'},
+     {u:'https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?w=1100&q=80',l:'Workspace'},
+     {u:'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1100&q=80',l:'View'},
+   ],
+   desc:'Designed for the travelling professional — a dedicated work desk, faster Wi-Fi, and a private lounge area for meetings or quiet evenings.',
+   feats:['City View','58 m²','King Bed','Work Desk'],
+   amenities:['Air Conditioning','Premium Wi-Fi','Work Desk','Soaking Tub','Nespresso Machine','Mini Bar','Bathrobe & Slippers','Late Checkout']},
+  {id:4,cat:'presidential',tag:'Top Tier',name:'The Presidential',price:3200,size:'95 m²',occ:'4 Adults',bed:'King Bed + Sofa Bed',
+   imgs:[
+     {u:'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1100&q=85',l:'Suite'},
+     {u:'https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?w=1100&q=80',l:'Living Room'},
+     {u:'https://images.unsplash.com/photo-1631049552057-403cdb8f0658?w=1100&q=80',l:'Bathroom'},
+   ],
+   desc:'Our flagship suite — a full living room, private dining table, and a wraparound terrace overlooking the entire garden. Includes a dedicated butler service.',
+   feats:['Panoramic View','95 m²','King + Sofa Bed','Private Terrace'],
+   amenities:['Air Conditioning','Premium Wi-Fi','Private Terrace','Dining Table','Butler Service','Soaking Tub','Mini Bar','Bathrobe & Slippers','Late Checkout','Airport Transfer Included']},
+];
+
+let aRF='all',curRoom=null,curRImg=0;
+
+function renderRooms(f){
+  const g=document.getElementById('roomsGrid');
+  const list=f==='all'?ROOMS:ROOMS.filter(r=>r.cat===f);
+  g.innerHTML=list.map(r=>`
+    <div class="room-card" onclick="mOpenRoom(${r.id})">
+      <div class="room-img">
+        <span class="room-badge">${r.tag}</span>
+        <img src="${r.imgs[0].u}" alt="${r.name}" loading="lazy">
+      </div>
+      <div class="room-body">
+        <div class="room-tag">${r.bed}</div>
+        <div class="room-name">${r.name}</div>
+        <div class="room-desc">${r.desc}</div>
+        <div class="room-feats">${r.feats.map(f=>`<span class="room-feat">${f}</span>`).join('')}</div>
+        <div class="room-foot">
+          <div><div class="room-price">GHS ${r.price.toLocaleString()}</div><div class="room-price-note">per night, taxes included</div></div>
+          <div class="room-cta">View & Book</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function rF(f,btn){
+  aRF=f;
+  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));
+  if(btn)btn.classList.add('on');
+  renderRooms(f);
+}
+
+const amenIconMap={
+  'Air Conditioning':'<path d="M12 2v20M2 8l10 6 10-6M2 16l10-6 10 6"/>',
+  'default':'<path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/>'
+};
+
+function mOpenRoom(id){
+  curRoom=ROOMS.find(r=>r.id===id);curRImg=0;
+  if(!curRoom)return;
+  renderRoomModal();
+  document.getElementById('mOv').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+
+function renderRoomModal(){
+  const r=curRoom;
+  document.getElementById('mMain').innerHTML=`<img src="${r.imgs[curRImg].u}" alt="${r.name}" id="mImg">`;
+  document.getElementById('mThumbs').innerHTML=r.imgs.map((im,i)=>`
+    <div class="m-thumb ${i===curRImg?'on':''}" onclick="swRImg(${i})"><img src="${im.u}" alt="${im.l}" loading="lazy"></div>`).join('');
+  document.getElementById('mInfo').innerHTML=`
+    <div class="m-tag">${r.tag}</div>
+    <div class="m-name">${r.name}</div>
+    <div class="m-desc">${r.desc}</div>
+    <div class="m-amen-list">
+      ${r.amenities.map(a=>`<div class="m-amen"><svg viewBox="0 0 24 24">${amenIconMap['default']}</svg>${a}</div>`).join('')}
+    </div>`;
+  document.getElementById('mBooking').innerHTML=`
+    <div class="m-price-row"><span class="m-price">GHS ${r.price.toLocaleString()}</span><span class="m-price-unit">/ night, taxes incl.</span></div>
+    <div class="bk-row">
+      <div class="bk-field"><label>Check In</label><input type="date" id="bk-in" onchange="updateSummary()"></div>
+      <div class="bk-field"><label>Check Out</label><input type="date" id="bk-out" onchange="updateSummary()"></div>
+    </div>
+    <div class="bk-row">
+      <div class="bk-field"><label>Guests</label><select id="bk-guests"><option>1 Guest</option><option selected>2 Guests</option><option>3 Guests</option><option>4 Guests</option></select></div>
+      <div class="bk-field"><label>Rooms</label><select id="bk-rooms" onchange="updateSummary()"><option selected>1 Room</option><option>2 Rooms</option><option>3 Rooms</option></select></div>
+    </div>
+    <div class="bk-summary" id="bkSummary">
+      <div class="bk-sum-row"><span>Room rate</span><span>GHS ${r.price.toLocaleString()} × 1 night</span></div>
+      <div class="bk-sum-total"><span>Estimated Total</span><span>GHS ${r.price.toLocaleString()}</span></div>
+    </div>
+    <button class="btn-g btn-full" style="margin-top:20px" onclick="go('contact');mClose()">Request to Book</button>
+    <div style="text-align:center;margin-top:12px;font-size:11px;color:var(--text3)">No payment required now — our team confirms by phone or email.</div>`;
+}
+
+function updateSummary(){
+  const inEl=document.getElementById('bk-in'),outEl=document.getElementById('bk-out'),roomsEl=document.getElementById('bk-rooms');
+  if(!inEl||!outEl||!curRoom)return;
+  let nights=1;
+  if(inEl.value&&outEl.value){
+    const d1=new Date(inEl.value),d2=new Date(outEl.value);
+    const diff=Math.round((d2-d1)/(1000*60*60*24));
+    if(diff>0)nights=diff;
+  }
+  const numRooms=roomsEl?parseInt(roomsEl.value[0]):1;
+  const total=curRoom.price*nights*numRooms;
+  document.getElementById('bkSummary').innerHTML=`
+    <div class="bk-sum-row"><span>Room rate</span><span>GHS ${curRoom.price.toLocaleString()} × ${nights} night${nights>1?'s':''} × ${numRooms} room${numRooms>1?'s':''}</span></div>
+    <div class="bk-sum-total"><span>Estimated Total</span><span>GHS ${total.toLocaleString()}</span></div>`;
+}
+
+function swRImg(i){
+  curRImg=i;
+  const img=document.getElementById('mImg');
+  if(img){img.style.opacity='0';setTimeout(()=>{img.src=curRoom.imgs[i].u;img.style.opacity='1'},140)}
+  document.querySelectorAll('.m-thumb').forEach((t,idx)=>t.classList.toggle('on',idx===i));
+}
+
+function mClose(){document.getElementById('mOv').classList.remove('on');document.body.style.overflow=''}
+function mBg(e){if(e.target===document.getElementById('mOv'))mClose()}
+
+// HERO SLIDER
+const heroImgs=[
+  'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1800&q=80',
+  'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1800&q=80',
+  'https://images.unsplash.com/photo-1591088398332-8a7791972843?w=1800&q=80',
+  'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1800&q=80',
+];
+let heroIdx=0;
+function initHero(){
+  document.getElementById('heroSlides').innerHTML=heroImgs.map((u,i)=>`<div class="hero-slide ${i===0?'on':''}" style="background-image:url('${u}')"></div>`).join('');
+  document.getElementById('heroDots').innerHTML=heroImgs.map((_,i)=>`<button class="hdot ${i===0?'on':''}" onclick="setHero(${i})"></button>`).join('');
+  setInterval(()=>setHero((heroIdx+1)%heroImgs.length),5500);
+}
+function setHero(i){
+  heroIdx=i;
+  document.querySelectorAll('.hero-slide').forEach((s,idx)=>s.classList.toggle('on',idx===i));
+  document.querySelectorAll('.hdot').forEach((d,idx)=>d.classList.toggle('on',idx===i));
+}
+
+function go(name){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
+  document.getElementById('pg-'+name).classList.add('on');
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('on'));
+  const el=document.getElementById('nl-'+name);if(el)el.classList.add('on');
+  window.scrollTo(0,0);
+  if(name==='rooms')renderRooms(aRF);
+}
+function togMob(){document.getElementById('mobMenu').classList.toggle('on')}
+
+function send(){
+  const fn=document.getElementById('fn').value.trim();
+  const em=document.getElementById('em').value.trim();
+  if(!fn||!em){alert('Please fill in your name and email.');return}
+  document.getElementById('fok').style.display='block';
+  ['fn','ln','em','ph','msg'].forEach(id=>{const e=document.getElementById(id);if(e)e.value=''});
+  document.getElementById('int').selectedIndex=0;
+}
+
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')}),{threshold:0.1});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+
+initHero();
+renderRooms('all');
+</script>
+</body>
+</html>
