@@ -63,6 +63,13 @@ h1.hero-h1 em{font-style:italic;color:var(--gold-l);font-weight:500}
 .bb-field select,.bb-field input{border:none;background:transparent;font-family:var(--font);font-size:14px;font-weight:600;color:var(--forest);outline:none;width:100%;cursor:pointer;-webkit-appearance:none}
 .bb-cta{background:var(--gold);color:var(--forest-d);border:none;padding:0 38px;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;font-family:var(--font)}
 .bb-cta:hover{background:var(--gold-l)}
+@media (max-width:768px){
+    .bb-cta{
+        padding:18px 38px;
+        min-height:60px;
+        width:100%;
+    }
+}
 .hero-dots{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;display:flex;gap:9px}
 .hdot{width:24px;height:3px;background:rgba(255,255,255,0.35);cursor:pointer;border:none;transition:background 0.3s}
 .hdot.on{background:var(--gold-l)}
